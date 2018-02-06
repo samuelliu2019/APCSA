@@ -4,7 +4,7 @@
 //Class -
 //Lab  -
 
-public class Circle
+public class Circle extends Lab02e
 {
 	private double radius;
 	private double area;
@@ -22,6 +22,6 @@ public class Circle
 	public void print( )
 	{
 		calculateArea();
-		System.out.println(area);
+		System.out.println("The area is :: " +  String.format("%.4f",area));
 	}
 }

@@ -12,8 +12,10 @@ public class Line
 	public Line(int x1, int y1, int x2, int y2)
 	{
 
-
-
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 
 
 	}
@@ -21,23 +23,25 @@ public class Line
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
 
-
-
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 
 
 	}
 
 	public void calculateSlope( )
 	{
-
-
-
-	}
+		double yDif = yTwo - yOne;
+		double xDif = xTwo - xOne;
+		slope = yDif/xDif;
+ 	}
 
 	public void print( )
 	{
 
-
+		System.out.println("The slope is " + String.format("%.2f",slope));
 
 	}
 }

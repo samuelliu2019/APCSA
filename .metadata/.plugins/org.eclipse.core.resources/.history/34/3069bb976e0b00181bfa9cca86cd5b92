@@ -1,0 +1,29 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+public class Fahrenheit
+{
+	private double fahrenheit;
+
+	public void setFahrenheit(double fahren)
+	{
+		fahrenheit = fahren;
+	}
+
+	public double getCelsius()
+	{
+		double celsius = 0.0;
+		double conversion = 5/9;
+		celsius = conversion*(fahrenheit - 32);
+		//add code to convert fahrenheit to celsius
+		return celsius;
+	}
+
+	public void print()
+	{
+		System.out.println(fahrenheit + " degrees Fahrenheit == " + getCelsius() + " degrees Celsius");
+	}
+}
