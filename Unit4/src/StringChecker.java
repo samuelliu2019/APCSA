@@ -41,28 +41,30 @@ public class StringChecker
 
 	public boolean findSubString(String s)
 	{
-		char c = s.charAt(0);
+		String sub = s;
+		char c = sub.charAt(0);
 		int index = 0;
-		for (int first = word.indexOf(c); first < word.length(); first++)
-		{
-			while (index != (s.length()))
+		int first = word.indexOf(c);
+		while (index != (sub.length()))
 			{
-			if (word.charAt(first) == s.charAt(index))
+				if (word.charAt(first) == sub.charAt(index))
 			{
-			index++;
+					index++;
+					first++;
 			}
-			else
+				else
 			{
-				return false;
+					return false;
 			}
+			
 			}
-		}
-
+		
 		return true;
 	}
-
+ 
+	
  	public String toString()
  	{
- 		return "\n\n";
-	}
+ 		return word + "\n\n";
+ 	}
 }

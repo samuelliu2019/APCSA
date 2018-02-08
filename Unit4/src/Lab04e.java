@@ -21,7 +21,7 @@ public class Lab04e
 		out.println("looking for all "+demo.findSubString("all"));
 		out.println("looking for gater "+demo.findSubString("gater"));
 		out.println(demo);
-
+ 
 		demo.setString("COMPUTER SCIENCE IS THE BEST!");
 		out.println("looking for U "+demo.findLetter('U'));
 		out.println("looking for COMP SCI "+demo.findSubString("COMP SCI"));
