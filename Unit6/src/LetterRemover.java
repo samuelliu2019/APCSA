@@ -34,17 +34,22 @@ public class LetterRemover
 
 	public String removeLetters()
 	{
-		String cleaned=sentence;
+		String cleaned = "";
+		for(int i = 0; i < sentence.length(); i++)
+		{
+			if (sentence.charAt(i) != lookFor)
+			{
+				cleaned = cleaned + String.valueOf(sentence.charAt(i));
+			}
+			
+		}
 
 
-
-
-
-		return cleaned;
+		return cleaned + "\n";
 	}
 
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor;
+		return sentence + " - letter to remove " + lookFor ;
 	}
 }
