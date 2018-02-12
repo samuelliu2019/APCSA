@@ -21,7 +21,8 @@ public class GuessingGame
 	{
 		Scanner keyboard = new Scanner(System.in);
 		
-		
+ 		double r = Math.random();
+		int whichnumber = (int)(r * upperBound);
 
 
 
