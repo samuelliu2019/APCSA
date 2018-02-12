@@ -13,13 +13,13 @@ public class Lab04e
 		StringChecker demo = new StringChecker("chicken");
 		out.println("looking for c "+demo.findLetter('c'));
 		out.println("looking for ch "+demo.findSubString("ch"));
-		out.println("looking for x "+demo.findSubString("x"));
+		out.println("looking for x "+demo.findLetter('x'));
 		out.println(demo);
 
 		demo.setString("alligator");
 		out.println("looking for g "+demo.findLetter('g'));
 		out.println("looking for all "+demo.findSubString("all"));
-//		out.println("looking for gater "+demo.findSubString("gater"));
+		out.println("looking for gater "+demo.findSubString("gater"));
 		out.println(demo);
  
 		demo.setString("COMPUTER SCIENCE IS THE BEST!");

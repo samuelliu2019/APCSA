@@ -19,7 +19,7 @@ public class Lab04e
 		demo.setString("alligator");
 		out.println("looking for g "+demo.findLetter('g'));
 		out.println("looking for all "+demo.findSubString("all"));
-//		out.println("looking for gater "+demo.findSubString("gater"));
+		out.println("looking for gater "+demo.findSubString("gater"));
 		out.println(demo);
  
 		demo.setString("COMPUTER SCIENCE IS THE BEST!");

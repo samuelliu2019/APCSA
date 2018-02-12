@@ -13,7 +13,7 @@ public class Lab04e
 		StringChecker demo = new StringChecker("chicken");
 		out.println("looking for c "+demo.findLetter('c'));
 		out.println("looking for ch "+demo.findSubString("ch"));
-		out.println("looking for x "+demo.findSubString("x"));
+		out.println("looking for x "+demo.findSubString('x'));
 		out.println(demo);
 
 		demo.setString("alligator");
