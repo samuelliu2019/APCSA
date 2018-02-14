@@ -18,20 +18,47 @@ public class Triples
 	public Triples(int num)
 	{
 
-
+		number = num;
 	}
 
 	public void setNum(int num)
 	{
-
+		number = num;
 
 	}
 	
 	private int greatestCommonFactor(int a, int b, int c)
 	{
-		int max = 0;
+		int max = number;
+		for(int n = 1; n <= max; n++)
+	    {
+		 for(a = n; a <= max; a++)
+		    {
+		        a = n;
+		        for(b = a +1; b <= max; b++)
+		        {
+		            b =n;
+		            for(c = b + 1; c <= max; c++)
+		            {
+		                c = n;
+		                if(Math.pow(a, 2)+ Math.pow(b, 2)== Math.pow(c, 2))
+		                {
+		                    if((a%2==1 && b%2==0)|| (a%2==0 && b%2==1))
+		                    {
+		                        if(a%2<=1 && b%2<=1 && c%2<=1)
+		                        {
 
+		                            String last = a + "" + b + c;
+		                        }
+		                    }
+		                }
 
+		            }
+
+		        }
+
+		    }
+	}
 
 		return 1;
 	}
