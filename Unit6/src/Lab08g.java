@@ -20,6 +20,6 @@ public class Lab08g
 		test.setNums(5, 15);
 		System.out.println(test);
 		
-					
+				
 	}
 }

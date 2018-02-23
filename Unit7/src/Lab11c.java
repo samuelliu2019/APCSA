@@ -12,9 +12,9 @@ public class Lab11c
    {
 
 	   TriangleThree test = new TriangleThree();
-	   test.setTriangle("a", 2);
+	   test.setTriangle("a", 9);
 	   System.out.println(test);
-	   test.setTriangle("X", 1);
+	   test.setTriangle("X", 7);
 	   System.out.println(test);
 
 

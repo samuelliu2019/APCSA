@@ -13,13 +13,13 @@ public class Prime
 
 	public Prime()
 	{
-		number = 2;
+		setPrime(2);
 
 	}
 
 	public Prime(int num)
 	{
-		number = num;
+		setPrime(num);
 
 	}
 
@@ -33,7 +33,7 @@ public class Prime
 	{
 		int sqrt = (int)Math.sqrt(number);
 		
-		for (int i = 2; i < sqrt; i++)
+		for (int i = 2; i <= sqrt; i++)
 		{
 			if (number%i==0)
 			{
