@@ -68,7 +68,7 @@ public class Grades
 		{
 			output = output + "grade " + Integer.toString(in) + " :: " + String.valueOf(array[in]) + "\n";
 		}
-		output += "average grade = " + getAverage();
+		output += "grade = " + getAverage();
 		return output;
 	}
 
