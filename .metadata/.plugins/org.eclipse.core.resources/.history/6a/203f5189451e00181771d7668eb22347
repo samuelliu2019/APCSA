@@ -1,0 +1,37 @@
+
+public class Assessment {
+
+	private int number;
+	
+	public static int isGoofy(int num)
+	{
+		int count = 0;
+		int y = num - 10*(num/10);
+		int index = 0;
+		boolean x = true;
+		return y;
+		/*
+		while(x == true)
+		{
+			if(num % y == 0)
+			{
+				count += y;
+			}
+			index++;
+			y = num/((10)^(index));
+		}
+		*/
+	}
+	
+	public static int[] getSomeGoofyNumbers(int count)
+	{
+		
+	}
+	
+	public static void main(String[] args) {
+
+		isGoofy(12);
+	}
+	
+}
+
