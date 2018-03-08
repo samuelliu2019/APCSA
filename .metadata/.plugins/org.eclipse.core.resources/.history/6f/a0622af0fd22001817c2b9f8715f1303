@@ -125,7 +125,7 @@ public class MadLib
 		if(verbs.size() == 1)
 			return verbs.get(0);
 		else
-			return verbs.get((int)(Math.random()*(verbs.size())));
+			return verbs.get((int)Math.random()*(verbs.size()));
  	}
 	
 	public String getRandomNoun()
@@ -136,7 +136,7 @@ public class MadLib
 		if(nouns.size() == 1)
 			return nouns.get(0);
 		else
-			return nouns.get((int)(Math.random()*(nouns.size())));
+			return nouns.get((int)Math.random()*(nouns.size()));
 	}
 	
 	public String getRandomAdjective()
@@ -147,7 +147,7 @@ public class MadLib
 		if(adjectives.size() == 1)
 			return adjectives.get(0);
 		else
-			return adjectives.get((int)(Math.random()*(adjectives.size())));
+			return adjectives.get((int)Math.random()*(adjectives.size()));
 	}		
 
 	public String toString()
@@ -187,6 +187,11 @@ public class MadLib
 	   }
 	   scan.close();
 	   
-	   return output;
+	   if(nouns.size() == 0)
+			return "0";
+		if(nouns.size() == 1)
+			return "1";
+		else
+			return Integer.toString(((int)Math.random()*(nouns.size())));
 	}
 }

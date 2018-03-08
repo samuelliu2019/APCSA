@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import static java.lang.System.*;
 
@@ -29,8 +28,11 @@ public class Histogram
 	public Histogram(char[] values, String fName)
 	{
 
-		fileName = fName;
-		
+
+
+
+
+
 		out.println("search letters = "+letters);
 	}
 

@@ -30,7 +30,13 @@ public class Histogram
 	{
 
 		fileName = fName;
-		
+		char[] test = values;
+		letters = new ArrayList<Character>(Arrays.asList(test));
+
+
+
+
+
 		out.println("search letters = "+letters);
 	}
 

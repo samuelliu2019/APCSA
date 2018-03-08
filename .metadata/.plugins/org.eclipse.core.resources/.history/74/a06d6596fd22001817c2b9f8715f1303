@@ -18,7 +18,6 @@ public class MadLib
 	private ArrayList<String> verbs;
 	private ArrayList<String> nouns;
 	private ArrayList<String> adjectives;
-	private String file;
 	
 	public MadLib()
 	{
@@ -32,7 +31,7 @@ public class MadLib
 	public MadLib(String fileName)
 	{
 		this();
-		file = fileName;
+		
 		loadNouns();
 		loadVerbs();
 		loadAdjectives();
@@ -125,7 +124,7 @@ public class MadLib
 		if(verbs.size() == 1)
 			return verbs.get(0);
 		else
-			return verbs.get((int)(Math.random()*(verbs.size())));
+			return verbs.get((int)Math.random()*(verbs.size()));
  	}
 	
 	public String getRandomNoun()
@@ -136,7 +135,7 @@ public class MadLib
 		if(nouns.size() == 1)
 			return nouns.get(0);
 		else
-			return nouns.get((int)(Math.random()*(nouns.size())));
+			return nouns.get((int)Math.random()*(nouns.size()));
 	}
 	
 	public String getRandomAdjective()
@@ -147,7 +146,7 @@ public class MadLib
 		if(adjectives.size() == 1)
 			return adjectives.get(0);
 		else
-			return adjectives.get((int)(Math.random()*(adjectives.size())));
+			return adjectives.get((int)Math.random()*(adjectives.size()));
 	}		
 
 	public String toString()
@@ -155,7 +154,7 @@ public class MadLib
 	   String output = "";
 	   Scanner scan;
 	   try {
-		scan = new Scanner(new File(file));
+		scan = new Scanner(new File("C:\\Users\\lius9308\\Desktop\\story.dat"));
 	   } catch (FileNotFoundException e) {
  		e.printStackTrace();
  		return null;
@@ -186,7 +185,6 @@ public class MadLib
 				   output += next + ".";
 	   }
 	   scan.close();
-	   
 	   return output;
 	}
 }

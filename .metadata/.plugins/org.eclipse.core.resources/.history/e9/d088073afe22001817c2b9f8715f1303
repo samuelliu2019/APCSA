@@ -14,7 +14,5 @@ public class Lab16d
 		MadLib story = new MadLib("C:\\Users\\lius9308\\Desktop\\story.dat");
 		System.out.println(story);
 		out.println("\n");
-		System.out.println(story);
-
 	}
 }
