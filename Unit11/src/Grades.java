@@ -29,18 +29,13 @@ public class Grades
 		if(scan.hasNextInt())
 		{
 		grades = new double[scan.nextInt()];
+		String dash = scan.next();
 		for(int i = 0; i < grades.length; i++)
 		{
-			
-			try{
 				double input = Double.parseDouble(scan.next());
-				{
 				grades[i] = input;
-				}
-		    }
-			catch(Exception e)
-			{
-		    }
+				
+		   
 		}
 		}
 

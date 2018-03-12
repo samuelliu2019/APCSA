@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="set"/>
 			<item value="isempty"/>
 			<item value="false for"/>
 			<item value="values"/>
