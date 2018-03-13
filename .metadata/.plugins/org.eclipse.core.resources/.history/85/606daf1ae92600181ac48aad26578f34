@@ -97,10 +97,6 @@ public class Student implements Comparable<Student>
 	}	
  	public boolean equals(Student obj)
  	{
- 		if(this != obj)
- 		{
- 			return false;
- 		}
  		return true;
  	}
 }

@@ -9,11 +9,9 @@ import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
 
-import java.util.ArrayList;
-
 public class Grades
 {
-	private ArrayList<Double> grades;
+	private double[] grades;
 	
 	public Grades()
 	{
@@ -30,14 +28,12 @@ public class Grades
 		Scanner scan = new Scanner(gradeList);
 		if(scan.hasNextInt())
 		{
-		int n = scan.nextInt();	
- 		grades = new ArrayList<Double>(n);
-
+		grades = new double[scan.nextInt()];
 		String dash = scan.next();
-		for(int i = 0; i < grades.size(); i++)
+		for(int i = 0; i < grades.length; i++)
 		{
 				double input = Double.parseDouble(scan.next());
-				grades.set(i, input);
+				grades[i] = input;
 				
 		   
 		}
@@ -47,7 +43,7 @@ public class Grades
 	
 	public void setGrade(int spot, double grade)
 	{
-		grades.set(spot, grade);
+		grades[spot] = grade;
 
 
 	}
@@ -55,9 +51,9 @@ public class Grades
 	public double getSum()
 	{
 		double sum=0.0;
-		for(int i = 0; i < grades.size();i++)
+		for(int i = 0; i < grades.length;i++)
 		{
-			sum += grades.get(i);
+			sum += grades[i];
 		}
 
 
@@ -69,11 +65,11 @@ public class Grades
 	{
 		double low = Double.MAX_VALUE;
 
-		for(int i = 0; i < grades.size(); i++)
+		for(int i = 0; i < grades.length; i++)
 		{
-			if(grades.get(i) < low)
+			if(grades[i] < low)
 			{
-				low = grades.get(i);
+				low = grades[i];
 			}
 		}
 
@@ -86,11 +82,11 @@ public class Grades
 	{
 		double high = Double.MIN_VALUE;
 
-		for(int i = 0; i < grades.size(); i++)
+		for(int i = 0; i < grades.length; i++)
 		{
-			if(grades.get(i) > high)
+			if(grades[i] > high)
 			{
-				high = grades.get(i);
+				high = grades[i];
 			}
 		}
 
@@ -101,7 +97,7 @@ public class Grades
 	
 	public int getNumGrades()
 	{
-		return grades.size();
+		return grades.length;
 	}
 	
 	public String toString()
