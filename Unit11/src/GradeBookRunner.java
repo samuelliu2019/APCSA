@@ -27,8 +27,9 @@ public class GradeBookRunner
 			System.out.println("Enter the name of student " + (i+1));
 			String stuname = keyboard.next();
 			System.out.println("Enter the grades for " + stuname);
-			System.out.println("Use the format x - grades ( 2 - 100 100)" + "\n");
- 			String grades = keyboard.next();
+			System.out.println("Use the format x - grades ( 2 - 100 100)");
+			String blank = keyboard.nextLine();
+ 			String grades = keyboard.nextLine();
 			test.addStudent(i, new Student(stuname,grades));
 		}
 

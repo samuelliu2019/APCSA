@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
-
-public class Student
+ 
+public class Student implements Comparable<Student>
 {
 	private String myName;
 	private Grades myGrades;
@@ -82,5 +82,21 @@ public class Student
 	public String toString()
 	{
 		return getName() + " = " + myGrades.toString();
+	}
+
+ 	public int compareTo(Student other) {
+ 		if(this.getAverage() > other.getAverage())
+ 		{
+ 			return 1;
+ 		}
+ 		else if (getAverage() < other.getAverage())
+ 		{
+ 			return -1;
+ 		}
+ 		return 0;
 	}	
+ 	public boolean equals(Student obj)
+ 	{
+ 		return true;
+ 	}
 }
