@@ -78,28 +78,42 @@ public class Monster implements Comparable
 	//creates a new copy of this Object
 	public Object clone()
 	{
-	   return new Monster();
+	   return new Monster(getHeight(), getWeight(), getAge());
 	}
 
 	public boolean equals( Object obj )
 	{
-
-
+		Monster rhs = (Monster)obj;
+		if( this.getHeight()==rhs.getHeight() && this.getAge()==rhs.getAge() && this.getWeight()==rhs.getWeight())
+			return true;
 		return false;
 	}
 
 	public int compareTo( Object obj )
 	{
 		Monster rhs = (Monster)obj;
-
-
-
-
-
-		return -1;
+		if(this.equals(rhs))
+			return 0;
+		else if(this.getHeight()>rhs.getHeight())
+			return 1;
+		else if(this.getHeight()<rhs.getHeight())
+			return -1;
+		else if(this.getWeight()>rhs.getWeight())
+			return 1;
+		else if(this.getWeight()<rhs.getWeight())
+			return -1;
+		else if(this.getAge()>rhs.getAge())
+			return 1;
+		else if(this.getAge()<rhs.getAge())
+			return -1;
+		return 0;
 	}
 
 	//write a toString() method
-	
+	public String toString()
+	{
+		String output = Integer.toString(getHeight()) + " " + Integer.toString(getWeight()) + " " + Integer.toString(getAge());
+		return output;
+	}
 	
 }
