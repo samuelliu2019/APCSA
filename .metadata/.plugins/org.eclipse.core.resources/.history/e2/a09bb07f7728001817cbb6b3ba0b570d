@@ -45,5 +45,9 @@ public class Lab18b
 		out.print("\nmTwo.compareTo(mOne) == ");
 		out.println(mTwo.compareTo(mOne));
 		ArrayList<String> word = new ArrayList<String>();
+		word.add("hi");
+		word.add("bye");
+		out.println(word);
+		
 	}
 }
