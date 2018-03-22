@@ -28,7 +28,6 @@ INDEX VERSION 1.130+C:\Users\lius9308\Desktop\APCSA\.metadata\.plugins\org.eclip
 998035881.index
 130088357.index
 2775202610.index
-4050094039.index
 1106408436.index
 1248407149.index
 151485385.index

@@ -28,19 +28,29 @@ public class AtCounter
 
 	public int countAts(int r, int c)
 	{
-		if(r <= atMat.length && r >=0 && c <= atMat.length && c >=0 && atMat[r][c]=='@')
+		if(atMat[r][c] == '-')
+			return 0;
+		
+		if(r == 0)
 		{
-			if(c==maze.length-1)  
-				return true;
-			else
-			{
-			int save = maze[r][c];
-			hasExitPath(r+1,c);
-			hasExitPath(r,c-1);
-			hasExitPath(r,c+1);
-			hasExitPath(r-1,c);
-			maze[r][c]=save;
-		return 0;
+			if(c==0)
+				return 1 + countAts(1,0) + countAts(0,1);
+			if(c==10)
+				return 1 + countAts(0,9) + countAts(1,10);
+			return 1 + countAts(0,c+1) + countAts(0,c-1) + countAts(1,c);
+		}
+		if(r == 10){
+			if(c==10)
+				return 1 + countAts(9,10) + countAts(10,9);
+			if(c==0)
+				return 1 + countAts(10,1) + countAts(9,0);
+			return 1 + countAts(10,c+1) + countAts(10,c-1) + countAts(9,c);
+		}
+		if(c==10)
+			return 1 + countAts(r+1,c) + countAts(r-1,c) + countAts(r,9);
+		if(c==0)
+			return 1 + countAts(r+1,c) + countAts(r-1,c) + countAts(r,1);
+		return 1 + countAts(r+1,c) + countAts(r,c+1) + countAts(r-1,c) + countAts(r, c-1);
 	}
 
 	public int getAtCount()
