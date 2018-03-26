@@ -1,0 +1,75 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import static java.lang.System.*;
+
+public class AtCounter
+{
+   private char[][] atMat;
+   private int atCount;
+
+	public AtCounter()
+	{
+		atCount=0;
+			   atMat = new char[][]{{'@','-','@','-','-','@','-','@','@','@'},
+									{'@','@','@','-','@','@','-','@','-','@'},
+									{'-','-','-','-','-','-','-','@','@','@'},
+									{'-','@','@','@','@','@','-','@','-','@'},
+									{'-','@','-','@','-','@','-','@','-','@'},
+									{'@','@','@','@','@','@','-','@','@','@'},
+									{'-','@','-','@','-','@','-','-','-','@'},
+									{'-','@','@','@','-','@','-','-','-','-'},
+									{'-','@','-','@','-','@','-','@','@','@'},
+									{'-','@','@','@','@','@','-','@','@','@'}};
+	}
+
+	public int countAts(int r, int c)
+	{
+		if(atMat[r][c]=='-')
+			return 0;
+		
+		if(r == 0)
+		{
+			if(c==0)
+				return 1 + countAts(1,0) + countAts(0,1);
+			if(c==9)
+				return 1 + countAts(0,8) + countAts(1,9);
+			return 1 + countAts(0,c+1) + countAts(0,c-1) + countAts(1,c);
+		}
+		if(r == 9){
+			if(c==9)
+				return 1 + countAts(8,9) + countAts(9,8);
+			if(c==0)
+				return 1 + countAts(9,1) + countAts(8,0);
+			return 1 + countAts(9,c+1) + countAts(9,c-1) + countAts(8,c);
+		}
+		if(c==9)
+			return 1 + countAts(r+1,c) + countAts(r-1,c) + countAts(r,8);
+		if(c==0)
+			return 1 + countAts(r+1,c) + countAts(r-1,c) + countAts(r,1);
+		if(countAts(r+1,c)!=0)
+			return 1 + countAts(r+1,c);
+		if(countAts(r,c+1)!=0)
+			return 1 + countAts(r,c+1);
+		if(countAts(r-1,c)!=0)
+			return 1 + countAts(r-1,c);
+		if(countAts(r,c-1)!=0)
+			return 1 + countAts(r,c-1);
+		return 1;
+	}
+
+	public int getAtCount()
+	{
+		return atCount;
+	}
+
+	public String toString()
+	{
+		String output="";
+		output+=getAtCount()+" @s connected.";
+		return output;
+	}
+}

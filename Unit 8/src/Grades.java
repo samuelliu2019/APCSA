@@ -66,10 +66,9 @@ public class Grades
 		
 		for(int in = 0; in < array.length; in++)
 		{
-			
-			output = output + "grade " + Integer.toString(in) = " :: " + String.valueOf(array[in]);
+			output = output + "grade " + Integer.toString(in) + " :: " + String.valueOf(array[in]) + "\n";
 		}
-		
+		output += "average grade = " + getAverage();
 		return output;
 	}
 
