@@ -4,6 +4,7 @@
 //Class - 
 //Lab  -
 
+import java.util.Arrays;
 import java.util.Scanner;
 import static java.lang.System.*;
 
@@ -13,12 +14,22 @@ public class FancyWord
 
 	public FancyWord()
 	{
-
+		mat=null;
 	}
 
-   public FancyWord(String s)
+   public void setFancyWord(String word)
 	{
+	   mat = new char[word.length()][word.length()];
+	   for(int i=0; i<word.length(); i++)
+	   {
+		   mat[0][i] = word.charAt(i);
+		   mat[word.length()-1][i]=word.charAt(i);
+		   mat[i][i]=word.charAt(i);
+		   mat[word.length()-1-i][i]=word.charAt(i);
+	      	//3 more statements
+	   	//like the one I gave you
 
+	   }
 
 
 
@@ -28,7 +39,7 @@ public class FancyWord
 	{
 		String output="";
 
-
+		output+=(Arrays.deepToString(mat));
 
 
 
