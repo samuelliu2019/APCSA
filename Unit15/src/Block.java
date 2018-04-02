@@ -18,99 +18,118 @@ public class Block implements Locatable
 
 	public Block()
 	{
-
+		setX(0);
+		setY(0);
+		setWidth(2);
+		setHeight(2); 
 
 	}
 
-	//add other Block constructors - x , y , width, height, color
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-   //add the other set methods
-   
-
-   public Block(int i, int j) {
-		// TODO Auto-generated constructor stub
+   public Block(int x, int y) {
+	   setX(x);
+	setY(y);
 	}
 
-public Block(int i, int j, int k, int l) {
-	// TODO Auto-generated constructor stub
+public Block(int x, int y, int w, int h) {
+	setX(x);
+	setY(y);
+	setWidth(w);
+	setHeight(h); 
 }
 
-public Block(int i, int j, int k, int l, Color red) {
-	// TODO Auto-generated constructor stub
+public Block(int x, int y, int w, int h, Color col) {
+	setX(x);
+	setY(y);
+	setWidth(w);
+	setHeight(h); 
+	setColor(col);
 }
 
 public void setColor(Color col)
    {
-
+	color = col;
 
    }
 
    public void draw(Graphics window)
    {
-   	//uncomment after you write the set and get methods
-      //window.setColor(color);
-      //window.fillRect(getX(), getY(), getWidth(), getHeight());
+       window.setColor(color);
+       window.fillRect(getX(), getY(), getWidth(), getHeight());
    }
 
-   public void draw(Graphics window, Color col)
+   protected int getHeight() {
+	return height;
+}
+
+protected int getWidth() {
+ 	return width;
+}
+
+public void draw(Graphics window, Color col)
    {
+    window.setColor(col);
+    window.fillRect(getX(), getY(), getWidth(), getHeight());
 
 
    }
    
-	public boolean equals(Object obj)
+	public boolean equals(Block obj)
 	{
-
+		if(this.getWidth() == obj.getWidth() && this.getHeight() == obj.getHeight() && this.getX() == obj.getX() && this.getY() == obj.getY() && this.getColor() == obj.getColor())
+			return true;
 
 
 
 		return false;
 	}
 
-	@Override
-	public void setPos(int x, int y) {
-		// TODO Auto-generated method stub
-		
+	protected Color getColor() {
+ 		return color;
 	}
 
+ 	public void setPos(int x, int y) {
+ 		xPos = x;
+ 		yPos = y;
+	}
+ 	public void setWidth(int w) {
+		width = w;
+	}
+ 	public void setHeight(int h) {
+		height = h;
+	}
+ 
 	@Override
 	public void setX(int x) {
-		// TODO Auto-generated method stub
-		
+		xPos = x;
 	}
 
 	@Override
 	public void setY(int y) {
-		// TODO Auto-generated method stub
-		
+		yPos = y;
 	}
 
 	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
-		return 0;
+		return xPos;
 	}
 
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}   
+		return yPos;
+ 	}   
 
    //add the other get methods
     
+	public String toString()
+	{
+		String output = "";
+		output += "x = " + Integer.toString(xPos) + "\n";
+		output += "y = " + Integer.toString(yPos) + "\n";
+		output += "width = " + Integer.toString(width) + "\n";
+		output += "height = " + Integer.toString(height) + "\n";
+		output += "Color = " + color + "\n";
 
+		return output;
+	}
    //add a toString() method  - x , y , width, height, color
 }

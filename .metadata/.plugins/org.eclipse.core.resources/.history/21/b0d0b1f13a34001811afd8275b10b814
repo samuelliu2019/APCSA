@@ -1,0 +1,26 @@
+
+public class d {
+	  public static void sort2(Comparable[] list )
+	  {
+	   for (int i=1; i< list.length; ++i)
+	   {
+	   int bot=0, top=i-1;
+	   while (bot<=top)
+	   {
+	   int mid=(bot+top)/2;
+	   if (list[mid].compareTo(list[i])<0)
+	   bot=mid+1;
+	   else top=mid-1;
+	   }
+	   Comparable temp=list[i];
+	   for (int j=i; j>bot; --j)
+	   list[j]=list[j-1];
+	   list[bot]=temp;
+	   }
+	  } 
+	  public static void main(String[] args)
+	  {
+		  Comparable[] list = {3,15,61,11,7,9,2};
+		  sort2(list);
+	  }
+}

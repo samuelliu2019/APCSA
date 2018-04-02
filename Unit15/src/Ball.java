@@ -26,9 +26,7 @@ public class Ball extends Block
 	
 	
 	
-	
-	
-	
+ 	
 	
 	
 	
@@ -37,63 +35,63 @@ public class Ball extends Block
    
 
    public Ball(int i, int j) {
-		// TODO Auto-generated constructor stub
-	}
+super(i,j);
+}
 
 public Ball(int i, int j, int k, int l) {
-	// TODO Auto-generated constructor stub
+super(i,j,k,l);
 }
 
-public Ball(int i, int j, int k, int l, Color blue) {
-	// TODO Auto-generated constructor stub
+public Ball(int i, int j, int k, int l, Color col) {
+	super(i,j,k,l,col);
 }
 
-public Ball(int i, int j, int k, int l, Color blue, int m, int n) {
-	// TODO Auto-generated constructor stub
+public Ball(int i, int j, int k, int l, Color col, int m, int n) {
+	super(i,j,k,l,col);
+	setXSpeed(m);
+	setYSpeed(n);
 }
 
 public void moveAndDraw(Graphics window)
    {
    	//draw a white ball at old ball location
-
+	Color white = null;
+ 	draw(window,white);
 
       setX(getX()+xSpeed);
-		//setY
+	  setY(getY()+ySpeed);
+	  draw(window,getColor());
 
 		//draw the ball at its new location
    }
    
-	public boolean equals(Object obj)
+	public boolean equals(Ball obj)
 	{
-
-
-
+		if(this.getWidth() == obj.getWidth() && this.getHeight() == obj.getHeight() && this.getX() == obj.getX() && this.getY() == obj.getY() && this.getColor() == obj.getColor())
+			return true;
 
 		return false;
 	}
 
 	public void setXSpeed(int i) {
-		// TODO Auto-generated method stub
-		
+		xSpeed = i;
 	}
 
 	public void setYSpeed(int i) {
-		// TODO Auto-generated method stub
-		
+		ySpeed = i;
 	}
 
 	public int getYSpeed() {
-		// TODO Auto-generated method stub
-		return 0;
+ 		return ySpeed;
 	}
 
 
 	public int getXSpeed() {
-		// TODO Auto-generated method stub
-		return 0;
+ 		return xSpeed;
 	}   
-
-   //add the get methods
-
-   //add a toString() method
+	public String toString()
+	{
+		String output = "";
+		output+= 
+	}
 }
