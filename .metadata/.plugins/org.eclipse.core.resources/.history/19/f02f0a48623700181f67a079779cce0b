@@ -16,7 +16,7 @@ public class Ball extends Block implements Collidable
 	{
 		//super(200,200);
 		
-		super ((int)(Math.random() * 550) + 20, (int)(Math.random() * 450) + 20);
+		super ((int)(Math.random() * 450) + 20, (int)(Math.random() * 450) + 20);
 		
 		xSpeed = 3;
 		ySpeed = 3;

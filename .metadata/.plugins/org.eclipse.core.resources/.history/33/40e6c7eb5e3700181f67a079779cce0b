@@ -75,7 +75,10 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	   Graphics2D twoDGraph = (Graphics2D)window;
 	   
 	   if (gameOver) {
-		    
+		   
+		  
+		   
+		  
 		   return;
 	   }
 	   
@@ -115,6 +118,22 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			rightPaddle.moveUpAndDraw(window);
 		}
 
+		//see if ball hits left wall or right wall
+		/*if(!(ball.getX()>=10 && ball.getX()<=730))
+		{
+			ball.setXSpeed(0);
+			ball.setYSpeed(0);
+		}
+		
+		//see if the ball hits the top or bottom wall 
+		if(!(ball.getY()>=10 && ball.getY()<=550))
+		{
+			ball.setYSpeed(-ball.getYSpeed());
+		}
+		
+		*/
+		
+		//window.setColor(Color.BLACK);
 		
 		if (ball.didCollideLeft(null)) {
 			ball.setXSpeed(0);

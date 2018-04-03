@@ -32,7 +32,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	{
 		//set up all variables related to the game
 		//ball = new Ball();
-		ball = new BlinkyBall();
+		ball = new SpeedUpBall();
 		ball.setColor(Color.GREEN);
 		leftPaddle = new Paddle(5, 10, 5, 10, 100);
 		rightPaddle = new Paddle(720, 10, 5, 10, 100);
@@ -203,7 +203,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			
 			case 'R':
 				
-				ball = new BlinkyBall();
+				ball = new SpeedUpBall();
 				//ball.setXSpeed(3);
 				//ball.setYSpeed(3);
 				gameOver = false;
