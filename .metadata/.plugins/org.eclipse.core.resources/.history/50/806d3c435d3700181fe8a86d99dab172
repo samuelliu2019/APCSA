@@ -74,13 +74,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	   
 	   Graphics2D twoDGraph = (Graphics2D)window;
 	   
-	   if (gameOver) {
-		   
-		  
-		   
-		  
-		   return;
-	   }
+	
 	   
 		//set up the double buffering to make the game animation nice and smooth
 		

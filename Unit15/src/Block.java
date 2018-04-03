@@ -9,127 +9,139 @@ import java.awt.Graphics;
 
 public class Block implements Locatable
 {
+	@Override
+	public String toString() {
+		return "Block [xPos=" + xPos + ", yPos=" + yPos + ", width=" + width
+				+ ", height=" + height + ", color=" + color + "]";
+	}
+
 	private int xPos;
 	private int yPos;
-	private int width;
-	private int height;
+	protected int width;
+	protected int height;
 
-	private Color color;
-
-	public Block()
-	{
-		setX(0);
-		setY(0);
-		setWidth(2);
-		setHeight(2); 
-
+	protected Color color;
+	
+	public Block() {
+		xPos = 0;
+		yPos = 0;
+		width = 0;
+		height = 0;
+		color = Color.GREEN;
 	}
 
-   public Block(int x, int y) {
-	   setX(x);
-	setY(y);
+	public Block(int xPos, int yPos, int width, int height) {
+		super();
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.width = width;
+		this.height = height;
+		color = Color.GREEN;
+	}
+	
+	public Block(int xPos, int yPos, int width, int height, Color c) {
+		super();
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.width = width;
+		this.height = height;
+		color = c;
 	}
 
-public Block(int x, int y, int w, int h) {
-	setX(x);
-	setY(y);
-	setWidth(w);
-	setHeight(h); 
-}
 
-public Block(int x, int y, int w, int h, Color col) {
-	setX(x);
-	setY(y);
-	setWidth(w);
-	setHeight(h); 
-	setColor(col);
-}
 
-public void setColor(Color col)
+	//add other Block constructors - x , y , width, height, color
+	
+	
+	
+	public Block(int xPos, int yPos) {
+		this.xPos = xPos;
+		this.yPos = yPos;
+		width = 10;
+		height = 10;
+		color = Color.GREEN;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+   //add the other set methods
+   
+
+   public void setColor(Color col)
    {
-	color = col;
-
-   }
-
-   public void draw(Graphics window)
-   {
-       window.setColor(color);
-       window.fillRect(getX(), getY(), getWidth(), getHeight());
-   }
-
-   protected int getHeight() {
-	return height;
-}
-
-protected int getWidth() {
- 	return width;
-}
-
-public void draw(Graphics window, Color col)
-   {
-    window.setColor(col);
-    window.fillRect(getX(), getY(), getWidth(), getHeight());
-
+	   color = col;
 
    }
    
-	public boolean equals(Block obj)
+   public Color getColor() {
+	   return color;
+   }
+   
+   public void draw(Graphics window)
+   {
+      window.setColor(color);
+      window.fillRect(getX(), getY(), getWidth(), getHeight());
+   }
+
+   public void draw(Graphics window, Color col)
+   {
+	  draw(window);
+   }
+   
+	public boolean equals(Object obj)
 	{
-		if(this.getWidth() == obj.getWidth() && this.getHeight() == obj.getHeight() && this.getX() == obj.getX() && this.getY() == obj.getY() && this.getColor() == obj.getColor())
-			return true;
 
 
 
-		return false;
+
+		return this == obj;
 	}
 
-	protected Color getColor() {
- 		return color;
+	@Override
+	public void setPos(int x, int y) {
+		// TODO Auto-generated method stub
+		setX(x);
+		setY(y);
 	}
 
- 	public void setPos(int x, int y) {
- 		xPos = x;
- 		yPos = y;
-	}
- 	public void setWidth(int w) {
-		width = w;
-	}
- 	public void setHeight(int h) {
-		height = h;
-	}
- 
 	@Override
 	public void setX(int x) {
+		// TODO Auto-generated method stub
 		xPos = x;
 	}
 
 	@Override
 	public void setY(int y) {
+		// TODO Auto-generated method stub
 		yPos = y;
 	}
 
 	@Override
 	public int getX() {
+		// TODO Auto-generated method stub
 		return xPos;
 	}
 
 	@Override
 	public int getY() {
+		// TODO Auto-generated method stub
 		return yPos;
- 	}   
+	}   
 
    //add the other get methods
     
-	public String toString()
-	{
-		String output = "";
-		output += "x = " + Integer.toString(xPos) + "\n";
-		output += "y = " + Integer.toString(yPos) + "\n";
-		output += "width = " + Integer.toString(width) + "\n";
-		output += "height = " + Integer.toString(height) + "\n";
-		output += "Color = " + color + "\n";
 
-		return output;
-	}
    //add a toString() method  - x , y , width, height, color
 }

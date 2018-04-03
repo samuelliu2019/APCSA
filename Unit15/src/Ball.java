@@ -7,91 +7,154 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Ball extends Block
+public class Ball extends Block implements Collidable
 {
 	private int xSpeed;
 	private int ySpeed;
 
 	public Ball()
 	{
-		super(200,200);
+		//super(200,200);
+		
+		super ((int)(Math.random() * 450) + 20, (int)(Math.random() * 450) + 20);
+		
 		xSpeed = 3;
-		ySpeed = 1;
+		ySpeed = 3;
+		
+		if ((int)(Math.random() * 2) == 1) {
+			xSpeed = -1 * xSpeed;
+		}
+		
+		if ((int)(Math.random() * 2) == 1) {
+			ySpeed = -1 * ySpeed;
+		}
+		
+		width = 20;
+		height = 20;
+		   
+		   setColor(Color.GREEN);
 	}
 
 	//add the other Ball constructors
-	
-	
-	
-	
-	
-	
- 	
-	
-	
 	
 	   
    //add the set methods
    
 
-   public Ball(int i, int j) {
-super(i,j);
+   public Ball(int i, int j, int k, int l, Color blue) {
+		// TODO Auto-generated constructor stub
+	   super(i, j);
+	   xSpeed = k;
+	   ySpeed = l;
+	   setColor(blue);
+	   width = 20;
+	   height = 20;
+	}
+
+   public Ball(int i, int j, int k, int l) {
+	// TODO Auto-generated constructor stub
+	   
+	   super(i, j);
+	   xSpeed = k;
+	   ySpeed = l;
+	   
+	   width = 20;
+	   height = 20;
 }
 
-public Ball(int i, int j, int k, int l) {
-super(i,j,k,l);
+public Ball(int i, int j) {
+	// TODO Auto-generated constructor stub
+	
+	super(i, j);
+	width = 20;
+	   height = 20;
 }
 
-public Ball(int i, int j, int k, int l, Color col) {
-	super(i,j,k,l,col);
+public Ball(int i, int j, int k, int l, Color blue, int m, int n) {
+	// TODO Auto-generated constructor stub
+	
+	 super(i, j);
+	   xSpeed = k;
+	   ySpeed = l;
+	   setColor(blue);
+
+	   width = m;
+	   height = l;
 }
 
-public Ball(int i, int j, int k, int l, Color col, int m, int n) {
-	super(i,j,k,l,col);
-	setXSpeed(m);
-	setYSpeed(n);
+public Ball(int x, int y, int wid, int ht, int xSpd, int ySpd) {
+	super(x, y);
+	   xSpeed = xSpd;
+	   ySpeed = ySpd;
+	   setColor(Color.GREEN);
+
+	   width = wid;
+	   height = ht;
 }
 
 public void moveAndDraw(Graphics window)
    {
-   	//draw a white ball at old ball location
-	Color white = null;
- 	draw(window,white);
-
-      setX(getX()+xSpeed);
+	  setX(getX()+xSpeed);
 	  setY(getY()+ySpeed);
-	  draw(window,getColor());
-
-		//draw the ball at its new location
+	  
+	  draw(window, getColor());
    }
    
-	public boolean equals(Ball obj)
+	public boolean equals(Object obj)
 	{
-		if(this.getWidth() == obj.getWidth() && this.getHeight() == obj.getHeight() && this.getX() == obj.getX() && this.getY() == obj.getY() && this.getColor() == obj.getColor())
-			return true;
+		return this == obj;
+	}
 
-		return false;
+	@Override
+	public String toString() {
+		return "Ball [xSpeed=" + xSpeed + ", ySpeed=" + ySpeed + "]";
+	}
+
+	public int getXSpeed() {
+		// TODO Auto-generated method stub
+		return xSpeed;
 	}
 
 	public void setXSpeed(int i) {
 		xSpeed = i;
-	}
-
-	public void setYSpeed(int i) {
-		ySpeed = i;
+		
 	}
 
 	public int getYSpeed() {
- 		return ySpeed;
+		// TODO Auto-generated method stub
+		return ySpeed;
 	}
 
+	public void setYSpeed(int i) {
+		// TODO Auto-generated method stub
+		ySpeed = i;
+	}
 
-	public int getXSpeed() {
- 		return xSpeed;
+	@Override
+	public boolean didCollideLeft(Object obj) {
+		// TODO Auto-generated method stub
+		return getX()<=10;
+	}
+
+	@Override
+	public boolean didCollideRight(Object obj) {
+		// TODO Auto-generated method stub
+		return getX()>=730;
+	}
+
+	@Override
+	public boolean didCollideTop(Object obj) {
+		// TODO Auto-generated method stub
+		return getY()<=10;
+	}
+
+	@Override
+	public boolean didCollideBottom(Object obj) {
+		// TODO Auto-generated method stub
+		return getY()>=550;
 	}   
-	public String toString()
-	{
-		String output = "";
-		output+= 
-	}
+
+   //add the get methods
+
+   //add a toString() method
 }
