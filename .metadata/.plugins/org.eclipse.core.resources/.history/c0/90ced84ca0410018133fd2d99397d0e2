@@ -55,10 +55,10 @@ public class PictureTester
   
   public static void testFixUnderwater()
   {
-	    Picture water = new Picture("water.jpg");
-	    water.explore();
-	    water.FixUnderwater();
-	    water.explore();
+	    Picture beach = new Picture("water.jpg");
+	    beach.explore();
+	    beach.FixUnderwater();
+	    beach.explore();
 	}
   
   /** Method to test mirrorVertical */
@@ -107,8 +107,8 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    //testGrayscale();
-    testFixUnderwater();
+    testGrayscale();
+    //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();

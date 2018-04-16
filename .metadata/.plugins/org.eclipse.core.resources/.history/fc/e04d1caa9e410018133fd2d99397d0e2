@@ -97,7 +97,7 @@ public class Picture extends SimplePicture
       }
     }
   }
-  public void KeepOnlyBlue()
+  public void PictureTester()
   {
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
@@ -109,75 +109,6 @@ public class Picture extends SimplePicture
       }
     }
   }
-  public void KeepOnlyRed()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    for (Pixel[] rowArray : pixels)
-    {
-      for (Pixel pixelObj : rowArray)
-      {
-        pixelObj.setGreen(0);
-        pixelObj.setBlue(0);
-      }
-    }
-  }
-  public void KeepOnlyGreen()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    for (Pixel[] rowArray : pixels)
-    {
-      for (Pixel pixelObj : rowArray)
-      {
-        pixelObj.setBlue(0);
-        pixelObj.setRed(0);
-      }
-    }
-  }
-  
-  public void negate()
-  {
-	    Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	      for (Pixel pixelObj : rowArray)
-	      {
-	        pixelObj.setBlue(255-pixelObj.getBlue());
-	        pixelObj.setRed(255-pixelObj.getRed());
-	        pixelObj.setGreen(255-pixelObj.getGreen());
-
-	      }
-	    }
-	  }
-  
-  public void GrayScale()
-  {
-	  Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	      for (Pixel pixelObj : rowArray)
-	      {
-	    	  int i = ((pixelObj.getBlue() + pixelObj.getRed() + pixelObj.getGreen())/3);
-	        pixelObj.setBlue(i);
-	        pixelObj.setRed(i);
-	        pixelObj.setGreen(i);
-
-	      }
-	    }
-	  }
-  public void FixUnderwater()
-  {
-	  Pixel[][] pixels = this.getPixels2D();
-	    for (Pixel[] rowArray : pixels)
-	    {
-	      for (Pixel pixelObj : rowArray)
-	      {
-	        pixelObj.setBlue(pixelObj.getBlue()-40);
-	        pixelObj.setGreen(pixelObj.getGreen()-80);
-	        pixelObj.setRed(pixelObj.getRed()+20);
-
-	      }
-	    }
-	  }  
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture

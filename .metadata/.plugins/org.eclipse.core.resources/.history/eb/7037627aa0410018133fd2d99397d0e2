@@ -171,9 +171,10 @@ public class Picture extends SimplePicture
 	    {
 	      for (Pixel pixelObj : rowArray)
 	      {
-	        pixelObj.setBlue(pixelObj.getBlue()-40);
-	        pixelObj.setGreen(pixelObj.getGreen()-80);
-	        pixelObj.setRed(pixelObj.getRed()+20);
+	    	  int i = ((pixelObj.getBlue() + pixelObj.getRed() + pixelObj.getGreen())/3);
+	        pixelObj.setBlue(i);
+	        pixelObj.setRed(i);
+	        pixelObj.setGreen(i);
 
 	      }
 	    }
