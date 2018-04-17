@@ -70,59 +70,140 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  
+  /** Method to test mirrorVerticalRightToLeft */
+  public static void testMirrorVerticalRightToLeft()
+  {
+      Picture pic = new Picture( "swan.jpg" );
+      // Picture pic = new Picture( "android.jpg" );
+      pic.explore();
+      pic.mirrorVerticalRightToLeft();
+      pic.explore();
+  }
+
+
+  /** Method to test mirrorHorizontal */
+  public static void testMirrorHorizontal()
+  {
+      Picture cycle = new Picture( "redMotorcycle.jpg" );
+      cycle.explore();
+      cycle.mirrorHorizontal();
+      cycle.explore();
+  }
+
+
+  /** Method to test mirrorHorizontalBotToTop */
+  public static void testMirrorHorizontalBotToTop()
+  {
+      Picture swan = new Picture( "swan.jpg" );
+      swan.explore();
+      swan.mirrorHorizontalBotToTop();
+      swan.explore();
+  }
+
+
+  /** Method to test mirrorDiagonal */
+  public static void testMirrorDiagonal()
+  {
+      Picture beach = new Picture( "beach.jpg" );
+      beach.explore();
+      beach.mirrorDiagonal();
+      beach.explore();
+  }
+
+
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
-    temple.explore();
-    temple.mirrorTemple();
-    temple.explore();
+      Picture temple = new Picture( "temple.jpg" );
+      temple.explore();
+      temple.mirrorTemple();
+      temple.explore();
   }
-  
+
+
+  /** Method to test mirrorArms */
+  public static void testMirrorArms()
+  {
+      Picture snowman = new Picture( "snowman.jpg" );
+      snowman.explore();
+      snowman.mirrorArms();
+      snowman.explore();
+  }
+
+
+  /** Method to test mirrorGull */
+  public static void testMirrorGull()
+  {
+      Picture gull = new Picture( "seagull.jpg" );
+      gull.explore();
+      gull.mirrorGull();
+      gull.explore();
+  }
+
+
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
-    canvas.explore();
+      Picture canvas = new Picture( "640x480.jpg" );
+      canvas.createCollage();
+      canvas.explore();
   }
-  
+
+
+  /** Method to test copy */
+  public static void testCopy()
+  {
+      Picture katie = new Picture( "KatieFancy.jpg" );
+      Picture blank = new Picture( "640x480.jpg" );
+      blank.copy( katie, 4, 67, 75, 129, 10, 10 );
+      blank.show();
+  }
+
+
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
-    swan.explore();
+      Picture swan = new Picture( "swan.jpg" );
+      swan.edgeDetection( 10 );
+      swan.explore();
   }
-  
-  /** Main method for testing.  Every class can have a main
-    * method in Java */
-  public static void main(String[] args)
+
+
+
+
+  /**
+   * Main method for testing. Every class can have a main method in Java
+   */
+  public static void main( String[] args )
   {
-    // uncomment a call here to run a test
-    // and comment out the ones you don't want
-    // to run
-    //testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    testFixUnderwater();
-    //testMirrorVertical();
-    //testMirrorTemple();
-    //testMirrorArms();
-    //testMirrorGull();
-    //testMirrorDiagonal();
-    //testCollage();
-    //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
-    //testChromakey();
-    //testEncodeAndDecode();
-    //testGetCountRedOverValue(250);
-    //testSetRedToHalfValueInTopHalf();
-    //testClearBlueOverValue(200);
-    //testGetAverageForColumn(0);
+      // uncomment a call here to run a test
+      // and comment out the ones you don't want
+      // to run
+      // testZeroBlue();
+      // testKeepOnlyBlue();
+      // testKeepOnlyRed();
+      // testKeepOnlyGreen();
+      // testNegate();
+      // testGrayscale();
+      // testFixUnderwater();
+      // testMirrorVertical();
+      // testMirrorVerticalRightToLeft();
+      // testMirrorHorizontal();
+      // testMirrorHorizontalBotToTop();
+      // testMirrorDiagonal();
+      // testMirrorTemple();
+      // testMirrorArms();
+      // testMirrorGull();
+      // testCollage();
+      // testCopy();
+      // testEdgeDetection();
+      //testEdgeDetection2();
+      // testChromakey();
+      // testEncodeAndDecode();
+      // testGetCountRedOverValue(250);
+      // testSetRedToHalfValueInTopHalf();
+      // testClearBlueOverValue(200);
+      // testGetAverageForColumn(0);
   }
 }
