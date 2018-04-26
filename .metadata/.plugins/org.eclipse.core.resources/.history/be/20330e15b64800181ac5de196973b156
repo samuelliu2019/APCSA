@@ -8,6 +8,7 @@ public class Lab02e
 {
 	public static void main( String[] args )
    {
- 
+		int one = 9;
+		System.out.println("8 >> 1 ==" + (one>>1));
  	}
 }

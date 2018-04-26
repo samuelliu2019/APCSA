@@ -22,11 +22,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	private Alien alienOne;
 	private Alien alienTwo;
 
-	/* uncomment once you are ready for this part
-	 *
+	
    private AlienHorde horde;
 	private Bullets shots;
-	*/
+	private int timer = 0;
 
 	private boolean[] keys;
 	private BufferedImage back;
@@ -39,10 +38,14 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 		//instantiate other instance variables
 		//Ship, Alien
-
-		this.addKeyListener(this);
+		ship= new Ship(100,100, 50, 50, 5);
+		alienOne = new Alien(300,300,50,50,5);
+		alienTwo = new Alien(200,200,50,50,5);
+		horde = new AlienHorde(48);
+		shots = new Bullets();
+ 		this.addKeyListener(this);
 		new Thread(this).start();
-
+		
 		setVisible(true);
 	}
 
@@ -53,6 +56,9 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 	public void paint( Graphics window )
 	{
+		
+		timer++;
+		
 		//set up the double buffering to make the game animation nice and smooth
 		Graphics2D twoDGraph = (Graphics2D)window;
 
@@ -69,14 +75,41 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		graphToBack.drawString("StarFighter ", 25, 50 );
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0,0,800,600);
+		ship.draw(graphToBack);
+		horde.removeDeadOnes(shots.getList());
 
+		horde.moveEmAll();
+		horde.drawEmAll(graphToBack);
+		
+		shots.cleanEmUp(graphToBack);
+		shots.moveEmAll();
+		shots.drawEmAll(graphToBack);
+		
+		
 		if(keys[0] == true)
 		{
 			ship.move("LEFT");
 		}
 
 		//add code to move Ship, Alien, etc.
+		if(keys[1]==true)
+		{
+			ship.move("RIGHT");
+		}
+		if(keys[2]==true)
+		{
+			ship.move("UP");
+		}
+		if(keys[3]==true)
+		{
+			ship.move("DOWN");
+		}
 
+		if(keys[4] == true && timer>50)
+		{
+			timer = 0;
+			shots.add(new Ammo(ship.getX()+40, ship.getY(),-1));
+		}
 
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 
@@ -87,44 +120,45 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 	public void keyPressed(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		if (e.getKeyCode() == KeyEvent.VK_A)
 		{
 			keys[0] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		if (e.getKeyCode() == KeyEvent.VK_D)
 		{
 			keys[1] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_UP)
+		if (e.getKeyCode() == KeyEvent.VK_W)
 		{
 			keys[2] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
+		if (e.getKeyCode() == KeyEvent.VK_S)
 		{
 			keys[3] = true;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE)
 		{
 			keys[4] = true;
+			
 		}
 		repaint();
 	}
 
 	public void keyReleased(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		if (e.getKeyCode() == KeyEvent.VK_A)
 		{
 			keys[0] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		if (e.getKeyCode() == KeyEvent.VK_D)
 		{
 			keys[1] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_UP)
+		if (e.getKeyCode() == KeyEvent.VK_W)
 		{
 			keys[2] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
+		if (e.getKeyCode() == KeyEvent.VK_S)
 		{
 			keys[3] = false;
 		}
