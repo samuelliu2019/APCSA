@@ -177,7 +177,23 @@ public class PictureTester
        redMoto.explore();
   }
 
-
+  public static void testEncodeAndDecode()
+  {
+	  Picture pic = new Picture("blue-mark.jpg");
+	  pic.encode(new Picture("msg.jpg"));
+	  pic.explore();
+	  pic.decode();
+	  pic.explore();
+  }
+  
+  public static void testEncodeAndDecode2()
+  {
+	 	  Picture pic = new Picture("blue-mark2.jpg");
+		  pic.encode(new Picture("apple.jpg"));
+		  pic.explore();
+		  pic.decode();
+		  pic.explore();
+  }
 
 
   /**
@@ -185,7 +201,7 @@ public class PictureTester
    */
   public static void main( String[] args )
   {
-	  testSharpen(50,50,400,400); 
+	  //testSharpen(50,50,400,400); 
       // uncomment a call here to run a test
       // and comment out the ones you don't want
       // to run
@@ -214,5 +230,7 @@ public class PictureTester
       // testSetRedToHalfValueInTopHalf();
       // testClearBlueOverValue(200);
       // testGetAverageForColumn(0);
+	  testEncodeAndDecode();
+	  testEncodeAndDecode2();
   }
 }
