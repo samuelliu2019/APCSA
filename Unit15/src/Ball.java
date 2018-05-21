@@ -7,6 +7,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Ball extends Block implements Collidable
 {
 	private int xSpeed;
@@ -14,147 +17,112 @@ public class Ball extends Block implements Collidable
 
 	public Ball()
 	{
-		//super(200,200);
-		
-		super ((int)(Math.random() * 550) + 20, (int)(Math.random() * 450) + 20);
-		
+		super(200,200);
+		setWidth(40);
+		setHeight(40);
+		setColor(Color.BLACK);
 		xSpeed = 3;
-		ySpeed = 3;
-		
-		if ((int)(Math.random() * 2) == 1) {
-			xSpeed = -1 * xSpeed;
-		}
-		
-		if ((int)(Math.random() * 2) == 1) {
-			ySpeed = -1 * ySpeed;
-		}
-		
-		width = 20;
-		height = 20;
-		   
-		   setColor(Color.GREEN);
+		ySpeed = 1;
 	}
-
-	//add the other Ball constructors
 	
-	   
-   //add the set methods
-   
-
-   public Ball(int i, int j, int k, int l, Color blue) {
-		// TODO Auto-generated constructor stub
-	   super(i, j);
-	   xSpeed = k;
-	   ySpeed = l;
-	   setColor(blue);
-	   width = 20;
-	   height = 20;
+	public Ball (int x, int y){
+		super(x,y);
+		setWidth(40);
+		setHeight(40);
+		setColor(Color.BLACK);
+		xSpeed = 3;
+		ySpeed = 1;
 	}
-
-   public Ball(int i, int j, int k, int l) {
-	// TODO Auto-generated constructor stub
-	   
-	   super(i, j);
-	   xSpeed = k;
-	   ySpeed = l;
-	   
-	   width = 20;
-	   height = 20;
-}
-
-public Ball(int i, int j) {
-	// TODO Auto-generated constructor stub
-	
-	super(i, j);
-	width = 20;
-	   height = 20;
-}
-
-public Ball(int i, int j, int k, int l, Color blue, int m, int n) {
-	// TODO Auto-generated constructor stub
-	
-	 super(i, j);
-	   xSpeed = k;
-	   ySpeed = l;
-	   setColor(blue);
-
-	   width = m;
-	   height = l;
-}
-
-public Ball(int x, int y, int wid, int ht, int xSpd, int ySpd) {
-	super(x, y);
-	   xSpeed = xSpd;
-	   ySpeed = ySpd;
-	   setColor(Color.GREEN);
-
-	   width = wid;
-	   height = ht;
-}
-
-public void moveAndDraw(Graphics window)
+	public Ball(int x, int y, int w, int h){
+		super(x,y,w,h);
+		setColor(Color.BLACK);
+		xSpeed = 3;
+		ySpeed = 1;
+	}
+	public Ball (int x, int y, int w, int h, Color c){
+		super(x,y,w,h,c);
+		xSpeed = 3;
+		ySpeed = 1;
+	}
+	public Ball (int x, int y, int w, int h, Color c, int z, int r){
+		super(x,y,w,h,c);
+		setXSpeed(z);
+		setYSpeed(r);
+	}
+   public void setXSpeed(int z){
+	   xSpeed = z;
+   }
+   public void setYSpeed(int r){
+	   ySpeed = r;
+   }
+   public Color randomColor()
    {
-	  setX(getX()+xSpeed);
-	  setY(getY()+ySpeed);
-	  
-	  draw(window, getColor());
+   		int r = (int) (Math.random() * 256);		//
+ 		int g = (int)(Math.random() * 256);		//
+ 		int b = (int) (Math.random() * 256);		//
+ 		return new Color(r,g,b);
+   }
+
+   public void moveAndDraw(Graphics window)
+   {
+
+	   	setColor(randomColor());
+	   	draw(window, Color.WHITE);
+	      setX(getX()+xSpeed);
+	      setY(getY()+ySpeed);
+	      draw(window);
+
    }
    
 	public boolean equals(Object obj)
 	{
-		return this == obj;
-	}
-
-	@Override
-	public String toString() {
-		return "Ball [xSpeed=" + xSpeed + ", ySpeed=" + ySpeed + "]";
-	}
-
-	public int getXSpeed() {
-		// TODO Auto-generated method stub
-		return xSpeed;
-	}
-
-	public void setXSpeed(int i) {
-		xSpeed = i;
-		
-	}
-
-	public int getYSpeed() {
-		// TODO Auto-generated method stub
-		return ySpeed;
-	}
-
-	public void setYSpeed(int i) {
-		// TODO Auto-generated method stub
-		ySpeed = i;
-	}
-
-	@Override
-	public boolean didCollideLeft(Object obj) {
-		// TODO Auto-generated method stub
-		return getX()<=10;
-	}
-
-	@Override
-	public boolean didCollideRight(Object obj) {
-		// TODO Auto-generated method stub
-		return getX()>=730;
-	}
-
-	@Override
-	public boolean didCollideTop(Object obj) {
-		// TODO Auto-generated method stub
-		return getY()<=10;
-	}
-
-	@Override
-	public boolean didCollideBottom(Object obj) {
-		// TODO Auto-generated method stub
-		return getY()>=550;
+		if (getX() == ((Block) obj).getX() || getY() == ((Block)obj).getY() || getWidth() == ((Block)obj).getWidth() || getHeight() == ((Block)obj).getHeight() || getColor() == ((Block)obj).getColor()){
+			if (getXSpeed() == ((Ball) obj).getXSpeed() || getYSpeed() == ((Ball) obj).getYSpeed()){
+				return true;
+			}
+		}
+		return false;
 	}   
 
-   //add the get methods
-
-   //add a toString() method
+	public int getXSpeed(){
+		return xSpeed;
+	}
+	public int getYSpeed(){
+		return ySpeed;
+	}
+	public String toString(){
+		String output = "";
+		output += getX() + " " + getY() + " " + getWidth() + " " + getHeight() + " " + getColor() + " " + getXSpeed() + " " + getYSpeed();
+		return output;
+	}
+	
+	
+	public boolean didCollideLeft(Object obj){
+		Block xd = (Block)obj;
+		if (getX() > xd.getX() && getX() <= xd.getX()+xd.getWidth() && (getY() >= xd.getY() && getY()+getHeight() <= xd.getY()+xd.getHeight())){
+			return true;
+		}
+		return false;
+	}
+	public boolean didCollideRight(Object obj){
+		Block xd = (Block)obj;
+		if (getX() <= xd.getX() && getX()+getWidth() >= xd.getX() && (getY() >= xd.getY() && getY()+getHeight() <= xd.getY() + xd.getHeight())){
+			return true;
+		}
+		return false;
+	}
+	public boolean didCollideTop(Object obj){
+		Block xd = (Block)obj;
+		if (getY()+getHeight() >= xd.getY() && getY() < xd.getY()+xd.getHeight() && (getX()>=xd.getX() && getX()+getWidth()<=xd.getX()+xd.getWidth())){
+			return true;
+		}
+		return false;
+	}
+	public boolean didCollideBottom(Object obj){
+		Block xd = (Block)obj;
+		if (getY() <= xd.getY() + xd.getHeight() && getY() + getHeight() > xd.getY() && (getX()>=xd.getX() && getX()+getWidth()<=xd.getX()+xd.getWidth())){
+			return true;
+		}
+		return false;
+	}
 }

@@ -39,7 +39,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	
 	{
 		
-		ball = new Ball(600,200,10,10,Color.BLUE,6,6);
+		ball = new Ball(600,200,10,10,Color.BLUE,3,3);
 		tiles = new ArrayList<Block>();
 		int x = 20;
 		int init = 20;

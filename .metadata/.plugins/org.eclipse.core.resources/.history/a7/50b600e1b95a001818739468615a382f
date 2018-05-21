@@ -41,46 +41,46 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		
 		ball = new Ball(600,200,10,10,Color.BLUE,6,6);
 		tiles = new ArrayList<Block>();
-		int x = 20;
-		int init = 20;
-		for(int y = 10; y < 40; y += 20){
+		int xLocation = 20;
+		int setter = 20;
+		for(int yLocation = 10; yLocation < 40; yLocation += 20){
 			
-			for(x = init; x < 740; x += 130){
-				Block tile = new Block(x,y,100,15,randomColor());
+			for(xLocation = setter; xLocation < 740; xLocation += 130){
+				Block tile = new Block(xLocation,yLocation,100,15,randomColor());
 				tiles.add(tile);
 			}
-			init = 100;
+			setter = 100;
 		}
-		init = 50;
-		for(x = 720; x < 770; x += 25){
-			for(int yLocation = init; yLocation < 490; yLocation += 130){
-				Block tile2 = new Block(x, yLocation, 15, 100,randomColor());
+		setter = 50;
+		for(xLocation = 720; xLocation < 770; xLocation += 25){
+			for(int yLocation = setter; yLocation < 490; yLocation += 130){
+				Block tile2 = new Block(xLocation, yLocation, 15, 100,randomColor());
 				tiles.add(tile2);
 			}
-			init = 30;
+			setter = 30;
 		}
 
-		init = 20;
+		setter = 20;
 		for(int yLocation = 530; yLocation > 500; yLocation -= 20){
 			
-			for(x = init; x < 700; x += 130){
-				Block tile = new Block(x,yLocation,100,15,randomColor());
+			for(xLocation = setter; xLocation < 700; xLocation += 130){
+				Block tile = new Block(xLocation,yLocation,100,15,randomColor());
 				tiles.add(tile);
 			}
-			init = 70;
+			setter = 70;
 		}
 		
-		init = 100;
-		for(x = 40; x > 10; x -= 25){
-			for(int yLocation = init; yLocation < 490; yLocation += 130){
-				Block tile2 = new Block(x, yLocation, 15, 100, randomColor());
+		setter = 100;
+		for(xLocation = 40; xLocation > 10; xLocation -= 25){
+			for(int yLocation = setter; yLocation < 490; yLocation += 130){
+				Block tile2 = new Block(xLocation, yLocation, 15, 100, randomColor());
 				tiles.add(tile2);
 			}
-			init = 30;
+			setter = 30;
 		}
 		
 		 
-		paddle = new Paddle(340, 200,40,40,Color.GREEN,7);
+		paddle = new Paddle(340, 200,40,40,Color.RED,7);
 		up = new Block(0,0,800,10,Color.GRAY);
 		down = new Block(0,551,800,10,Color.GRAY);
 		left = new Block(0,10,10,541,Color.GRAY);
@@ -169,41 +169,41 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			if(!win){
 				win = true;
 				int xLocation = 0;
-				int init = 20;
+				int setter = 20;
 				for(int yLocation = 10; yLocation < 40; yLocation += 20){
 					
-					for(xLocation = init; xLocation < 740; xLocation += 50){
+					for(xLocation = setter; xLocation < 740; xLocation += 50){
 						Block tile = new Block(xLocation,yLocation,40,15,randomColor());
 						tiles.add(tile);
 					}
-					init = 40;
+					setter = 40;
 				}
-				init = 50;
+				setter = 50;
 				for(xLocation = 720; xLocation < 770; xLocation += 25){
-					for(int yLocation = init; yLocation < 490; yLocation += 50){
+					for(int yLocation = setter; yLocation < 490; yLocation += 50){
 						Block tile2 = new Block(xLocation, yLocation, 15, 40, randomColor());
 						tiles.add(tile2);
 					}
-					init = 30;
+					setter = 30;
 				}
 
-				init = 20;
+				setter = 20;
 				for(int yLocation = 530; yLocation > 500; yLocation -= 20){
 					
-					for(xLocation = init; xLocation < 740; xLocation += 50){
+					for(xLocation = setter; xLocation < 740; xLocation += 50){
 						Block tile = new Block(xLocation,yLocation,40,15,randomColor());
 						tiles.add(tile);
 					}
-					init = 40;
+					setter = 40;
 				}
 				
-				init = 50;
+				setter = 50;
 				for(xLocation = 40; xLocation > 10; xLocation -= 25){
-					for(int yLocation = init; yLocation < 490; yLocation += 50){
+					for(int yLocation = setter; yLocation < 490; yLocation += 50){
 						Block tile2 = new Block(xLocation, yLocation, 15, 40, randomColor());
 						tiles.add(tile2);
 					}
-					init = 30;
+					setter = 30;
 				}
 				
 			}

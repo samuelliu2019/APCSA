@@ -39,7 +39,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	
 	{
 		
-		ball = new Ball(600,200,10,10,Color.BLUE,6,6);
+		ball = new Ball(600,200,10,10,Color.BLUE,3,3);
 		tiles = new ArrayList<Block>();
 		int x = 20;
 		int init = 20;
@@ -63,17 +63,17 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		init = 20;
 		for(int yLocation = 530; yLocation > 500; yLocation -= 20){
 			
-			for(x = init; x < 700; x += 130){
-				Block tile = new Block(x,yLocation,100,15,randomColor());
+			for(xLocation = init; xLocation < 700; xLocation += 130){
+				Block tile = new Block(xLocation,yLocation,100,15,randomColor());
 				tiles.add(tile);
 			}
 			init = 70;
 		}
 		
 		init = 100;
-		for(x = 40; x > 10; x -= 25){
+		for(xLocation = 40; xLocation > 10; xLocation -= 25){
 			for(int yLocation = init; yLocation < 490; yLocation += 130){
-				Block tile2 = new Block(x, yLocation, 15, 100, randomColor());
+				Block tile2 = new Block(xLocation, yLocation, 15, 100, randomColor());
 				tiles.add(tile2);
 			}
 			init = 30;
